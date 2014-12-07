@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}	
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container" style='text-align: center';>
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h2 class="masthead-brand">
+				<span style='color: #F4C73A';> Henry's</span>
+				Donuts </h2>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <!-- <h1 class="cover-heading">Henry's Donuts</h1> -->
+            <div class='col-sm-8'>
+              <img src="{% static 'img/donut.jpg' %}" class='img-responsive' /> 
+             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+           </div>
+           <div class='col-sm-4'>
+            <p class="lead">
+            	<form method="POST" action=""> {% csrf_token %}
+				<!-- <input type='text' name='email_2' /> -->
+				{{ form.as_p }}
+				<div class="alert alert-danger" role="alert"> Email is required </div>
+				<input type='submit' value='Join' class='btn' />
+				</form>
+              <a href="#" class="btn btn-lg btn-info">THIS IS AWESOME</a>
+            </p>
+     
+           </div>
+        </div>
+
+       <!--    <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+              
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+
+<!--     
+<div class='container'>
+</div> -->
+
+{% endblock %}
